@@ -51,11 +51,13 @@ class NMPBatch {
 	 * 
 	 * @return array
 	 */
-    private function getMessages () {
+    private function getMessages() {
+
     	$output = '';
+    	
     	foreach($this->_messages as $val) {
-    		$output .= '<sendrequest>
-				<dyn>';
+    		$output .= '<sendrequest>';
+			$output .= '<dyn>';
 				
 				$kpv = $val->returnDynamicValues();
 				if(count($kpv) > 0) {
